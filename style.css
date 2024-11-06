@@ -51,3 +51,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
