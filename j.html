@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back End Pass</title>
+    <title>Wyatt's Projects</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,88 +51,62 @@
             font-size: 24px;
             text-align: center;
         }
-        form {
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
         }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input {
+        th, td {
+            border: 1px solid #ccc;
             padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 10px;
+            text-align: left;
         }
-        button {
-            padding: 10px;
-            background: #007BFF;
+        th {
+            background-color: #003366;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
         }
-        button:hover {
-            background: #0056b3;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
+        a:link { 
+              text-decoration: none;
+              color: white;
+        } 
+        a:visited { 
+              text-decoration: none;
+              color: white;
+        } 
+        a:hover { 
+              text-decoration: none; 
+              color: white;         
+        } 
+        a:active { 
+              text-decoration: none; 
+              color: white;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Back End Pass</h1>
+    <h1>Why I'm Messed Up</h1>
 </header>
 
-<nav>
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/pass.html">Contact</a>
-</nav>
+
 
 <main>
-    <form id="myForm">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" required>
-
-        <label for="birthDate">Birth Date:</label>
-        <input type="date" id="birthDate" required>
-
-        <button type="submit">Submit</button>
-    </form>
+   
+    <p>Hey! If you managed to find this, you must be a really good detective! I know that I probably shouldn't be talking about this publically, but I'm going to anyway. About 7 years ago, when we lived in out old house on the Boulevard, I was still friends with Gabe, and that was a really terrible Idea. He was decieptful, I was really dumb, and you can use your immagination to figure out what happened from there. I was originally okay with it, because I didn't understand what it was and how wrong it was to be doing it at that age. I eventually stopped liking it so much and shyed away from it, and he de-friended me. I realize that this makes me a lot less appealing in general because I'm "used goods", but I really hope that eventually I will be able to someone who can look past that, unlike 'you know who'.</p>
+    
+    <p>  </p>
+    <p>  </p>
+    <br></br>
 </main>
 
 <footer>
-    <p>Site made and updated by Wyatt Kraai</p>
+    <p>Site made and updated by <a href="https://imacweirdo.github.io/e.html">A total Idiot</a></p>
 </footer>
-
-<script>
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const firstName = document.getElementById('firstName').value;
-        const birthDate = document.getElementById('birthDate').value;
-
-        // List of valid name and date pairs with corresponding redirect URLs
-        const validEntries = [
-            { name: 'Jordan', date: '2007-02-04', redirect: 'j.html' },
-            { name: 'Mackenzie', date: '2007-07-12', redirect: 'nicetry.html' },
-            { name: 'Wyatt', date: '2007-09-01', redirect: 'nicetry.html' },
-            { name: 'Liz', date: '2007-03-12', redirect: 'nicetry.html' },
-            { name: 'Triston', date: '2008-04-11', redirect: 'nicetry.html' }
-        ];
-
-        const entry = validEntries.find(entry => 
-            entry.name === firstName && entry.date === birthDate
-        );
-
-        if (entry) {
-            window.location.href = entry.redirect; // Redirect to the corresponding page
-        } else {
-            alert('Incorrect first name or birth date.');
-        }
-    });
-</script>
 
 </body>
 </html>
