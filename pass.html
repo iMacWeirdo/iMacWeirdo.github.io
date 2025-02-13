@@ -1,29 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Example</title>
+    <title>Back End Pass</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2e2c2c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f9f9f9;
+            background-color: #b4b4b4;
+            padding: 5px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2e2c2c;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
         }
         form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
         }
         input {
-            margin: 10px 0;
             padding: 10px;
             width: 100%;
             box-sizing: border-box;
+            margin-bottom: 10px;
         }
         button {
             padding: 10px;
@@ -32,6 +71,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
         }
         button:hover {
             background: #0056b3;
@@ -39,6 +79,18 @@
     </style>
 </head>
 <body>
+
+<header>
+    <h1>Back End Pass</h1>
+</header>
+
+<nav>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/pass.html">Contact</a>
+</nav>
+
+<main>
     <form id="myForm">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" required>
@@ -48,24 +100,41 @@
 
         <button type="submit">Submit</button>
     </form>
+</main>
 
-    <script>
-        document.getElementById('myForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+<footer>
+    <p>Site made and updated by Wyatt Kraai</p>
+</footer>
 
-            const firstName = document.getElementById('firstName').value;
-            const birthDate = document.getElementById('birthDate').value;
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-            // Replace these with the correct values
-            const correctFirstName = 'Jordan';
-            const correctBirthDate = '2007-02-04'; // Format: YYYY-MM-DD
+        const firstName = document.getElementById('firstName').value;
+        const birthDate = document.getElementById('birthDate').value;
 
-            if (firstName === correctFirstName && birthDate === correctBirthDate) {
-                window.location.href = 'j.html'; // Replace with your target page
-            } else {
-                alert('Incorrect first name or birth date.');
-            }
-        });
-    </script>
+        // List of valid name and date pairs with corresponding redirect URLs
+        const validEntries = [
+            { name: 'Jordan', date: '2007-02-04', redirect: 'nicetry.html' },
+            { name: 'Mackenzie', date: '2007-07-12', redirect: 'nicetry.html' },
+            { name: 'Wyatt', date: '2007-09-01', redirect: 'wyattsucks.html' },
+            { name: 'Liz', date: '2007-03-12', redirect: 'nicetry.html' },
+            { name: 'Triston', date: '2008-04-11', redirect: 'nicetry.html' }
+            { name: 'Jerry', date: '1988-08-26', redirect: 'JerryBackendPass.html' }
+            
+        ];
+
+        const entry = validEntries.find(entry => 
+            entry.name === firstName && entry.date === birthDate
+        );
+
+        if (entry) {
+            window.location.href = entry.redirect; // Redirect to the corresponding page
+        } else {
+            alert('Incorrect first name or birth date.');
+        }
+    });
+</script>
+
 </body>
 </html>
