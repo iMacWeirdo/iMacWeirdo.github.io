@@ -74,11 +74,12 @@
 <nav>
     <a href="/index.html">Home</a>
     <a href="/JERRYabout.html">About</a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wyatt.kraai@thegenerals.org&su=Banana&body=YOUR%20CLUE%20IS%20DOG%20MONKEY">THE SECTRET WORD IS BANANA</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wyatt.kraai@thegenerals.org&su=Banana&body=YOUR%20CLUE%20IS%20DOG%20MONKEY">THE SECRET WORD IS BANANA</a>
 </nav>
 
 <main>
-    <div class="lore">
+    <button id="toggleLoreBtn">Show Lore</button>
+    <div id="loreSection" style="display: none;">
         <h2>Legend of Jerry and Johnny</h2>
         <p>In a land far beneath the waves, there lived Jerry, a mystical half-man, half-fish creature. With scales that shimmered like diamonds and a voice that could calm the fiercest storms, Jerry protected the ocean's secrets.</p>
         <p>One day, he discovered Johnny, a quirky red solo cup with a pink zipper running down the entirety of his front. At the top quarter of the cup, the zipper opened to reveal Johnny's face, inspired by a character from *The Shining*. With his infectious laugh and a penchant for adventure, Johnny became Jerry's best friend.</p>
@@ -106,14 +107,14 @@
     let score = 0;
 
     function drawCupMan(x, y, size) {
-        ctx.drawImage(cupImage, x, y, size, size); // Make it square
+        ctx.drawImage(cupImage, x, y, size, size);
     }
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         for (let i = 0; i < snake.length; i++) {
-            drawCupMan(snake[i].x, snake[i].y, i === 0 ? 30 : 20); // Head is larger
+            drawCupMan(snake[i].x, snake[i].y, i === 0 ? 30 : 20);
         }
 
         drawCupMan(food.x, food.y, 20);
@@ -124,12 +125,11 @@
         
         if (head.x === food.x && head.y === food.y) {
             score++;
-            snake.unshift(head); // Add the new head to the snake
+            snake.unshift(head);
 
-            // Redirect if more than 5 cups collected (6 segments)
             if (snake.length > 6) {
                 window.location.href = 'backendpass_dog_monkey.html';
-                return; // Exit the function to prevent further processing
+                return;
             }
 
             food = { x: Math.floor(Math.random() * 20) * 20, y: Math.floor(Math.random() * 20) * 20 };
@@ -172,6 +172,17 @@
     cupImage.onload = () => {
         gameLoop();
     };
+
+    document.getElementById('toggleLoreBtn').addEventListener('click', () => {
+        const loreSection = document.getElementById('loreSection');
+        if (loreSection.style.display === 'none') {
+            loreSection.style.display = 'block';
+            document.getElementById('toggleLoreBtn').innerText = 'Hide Lore';
+        } else {
+            loreSection.style.display = 'none';
+            document.getElementById('toggleLoreBtn').innerText = 'Show Lore';
+        }
+    });
 </script>
 
 </body>
