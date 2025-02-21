@@ -93,36 +93,28 @@
 <footer>
     <p>Site made and updated by Wyatt Kraai</p>
 </footer>
-<script>
-    let typed = "";
 
-    document.addEventListener('keydown', function(event) {
-        typed += event.key; // Append the pressed key to the typed variable
-        console.log("Current input:", typed); // Log the current input
-
-        // Check if the typed string matches the first condition
-        if (typed === "dogmonkeydogmonkeydogmonkey") {
-            console.log("Accessing StageTwoDogMonkey.html"); // Log before redirect
-            allowAccess("/StageTwoDogMonkey.html");
-        }
-        // Check if the typed string matches the second condition
-        else if (typed === "dogmonkey") {
-            console.log("Accessing youlikeboys.html"); // Log before redirect
-            allowAccess("/StageTwoDogMonkey.html");
+    <script>
+        function allowAccess() {
+            sessionStorage.setItem("canAccessStageTwo", "true");
+            window.location.href = "/StageTwoDogMonkey.html";
         }
 
-        // Limit the length of the typed string to 25 characters
-        if (typed.length > 25) {
-            typed = typed.substring(1);
-        }
-    });
+        let typed = "";
 
-    // Function to handle the redirection
-    function allowAccess(url) {
-        console.log("Redirecting to:", url); // Log for debugging
-        sessionStorage.setItem("canAccessClassList", "true"); // Set session storage
-        window.location.href = url; // Redirect to the specified URL
-    }
-</script>
+        document.addEventListener('keydown', function(event) {
+            typed += event.key;
+
+            if (typed === "dogmonkeydogmonkeydogmonkey") {
+                sessionStorage.setItem("canAccessStageTwo", "true");
+                window.location.href = "/StageTwoDogMonkey.html";
+            }
+
+            if (typed.length > 25) {
+                typed = typed.substring(1);
+            }
+        });
+    </script>
+    
 </body>
 </html>
