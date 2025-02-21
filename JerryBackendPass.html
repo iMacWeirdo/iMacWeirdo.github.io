@@ -184,6 +184,26 @@
         }
     });
 </script>
+<script>
+        function allowAccess() {
+            sessionStorage.setItem("canAccessClassList", "true");
+            window.location.href = "/StageTwoDogMonkey.html";
+        }
 
+        let typed = "";
+
+        document.addEventListener('keydown', function(event) {
+            typed += event.key;
+
+            if (typed === "dogmonkeydogmonkey") {
+                sessionStorage.setItem("canAccessClassList", "true");
+                window.location.href = "/StageTwoDogMonkey.html";
+            }
+
+            if (typed.length > 25) {
+                typed = typed.substring(1);
+            }
+        });
+    </script>
 </body>
 </html>
