@@ -68,9 +68,7 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            position: relative; /* Changed from fixed to relative */
         }
         h1 {
             font-size: 24px;
@@ -206,48 +204,27 @@
             document.getElementById('toggleLoreBtn').innerText = 'Show Lore';
         }
     });
+
+    let typed = "";
+
+    document.addEventListener('keydown', function(event) {
+        typed += event.key;
+
+        if (typed === "dogmonkeydogmonkeydogmonkey") {
+            allowAccess("/StageTwoDogMonkey.html");
+        } else if (typed === "ilikeboys") {
+            allowAccess("/youlikeboys.html");
+        }
+
+        if (typed.length > 25) {
+            typed = typed.substring(1);
+        }
+    });
+
+    function allowAccess(url) {
+        sessionStorage.setItem("canAccessClassList", "true");
+        window.location.href = url;
+    }
 </script>
-<script>
-        function allowAccess() {
-            sessionStorage.setItem("canAccessClassList", "true");
-            window.location.href = "/StageTwoDogMonkey.html";
-        }
-
-        let typed = "";
-
-        document.addEventListener('keydown', function(event) {
-            typed += event.key;
-
-            if (typed === "dogmonkeydogmonkeydogmonkey") {
-                sessionStorage.setItem("canAccessClassList", "true");
-                window.location.href = "/StageTwoDogMonkey.html";
-            }
-
-            if (typed.length > 25) {
-                typed = typed.substring(1);
-            }
-        });
-    </script>
-<script>
-        function allowAccess() {
-            sessionStorage.setItem("canAccessClassList", "true");
-            window.location.href = "/youlikeboys.html";
-        }
-
-        let typed = "";
-
-        document.addEventListener('keydown', function(event) {
-            typed += event.key;
-
-            if (typed === "ilikeboys") {
-                sessionStorage.setItem("canAccessClassList", "true");
-                window.location.href = "/youlikeboys.html";
-            }
-
-            if (typed.length > 25) {
-                typed = typed.substring(1);
-            }
-        });
-    </script>
 </body>
 </html>
