@@ -32,6 +32,29 @@
             text-decoration: none;
             color: #000000;
             font-weight: bold;
+            position: relative;
+        }
+        .about-button::after {
+            content: "FREE HINT!";
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            top: 100%;
+            white-space: nowrap;
+            font-size: 18px;
+            animation: flash 1s infinite;
+            color: red; /* Initial color */
+        }
+        .about-button:hover::after {
+            opacity: 1;
+        }
+        @keyframes flash {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { color: violet; }
         }
         main {
             padding: 20px;
@@ -73,7 +96,7 @@
 
 <nav>
     <a href="/index.html">Home</a>
-    <a href="/JERRYabout.html">About</a>
+    <a href="/JERRYabout.html" class="about-button">About</a>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wyatt.kraai@thegenerals.org&su=Banana&body=YOUR%20CLUE%20IS%20DOG%20MONKEY">THE SECRET WORD IS BANANA</a>
 </nav>
 
@@ -184,47 +207,5 @@
         }
     });
 </script>
-<script>
-        function allowAccess() {
-            sessionStorage.setItem("canAccessClassList", "true");
-            window.location.href = "/StageTwoDogMonkey.html";
-        }
-
-        let typed = "";
-
-        document.addEventListener('keydown', function(event) {
-            typed += event.key;
-
-            if (typed === "dogmonkeydogmonkeydogmonkey") {
-                sessionStorage.setItem("canAccessClassList", "true");
-                window.location.href = "/StageTwoDogMonkey.html";
-            }
-
-            if (typed.length > 25) {
-                typed = typed.substring(1);
-            }
-        });
-    </script>
-    <script>
-        function allowAccess() {
-            sessionStorage.setItem("canAccessClassList", "true");
-            window.location.href = "/youlikeboys.html";
-        }
-
-        let typed = "";
-
-        document.addEventListener('keydown', function(event) {
-            typed += event.key;
-
-            if (typed === "ilikeboys") {
-                sessionStorage.setItem("canAccessClassList", "true");
-                window.location.href = "youlikeboys.html";
-            }
-
-            if (typed.length > 25) {
-                typed = typed.substring(1);
-            }
-        });
-    </script>
 </body>
 </html>
