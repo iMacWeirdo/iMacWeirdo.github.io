@@ -96,7 +96,7 @@
 
     <script>
         function allowAccess() {
-            sessionStorage.setItem("canAccessStageTwo", "true");
+            sessionStorage.setItem("canAccessStageTwoDogMonkey", "true");
             window.location.href = "/StageTwoDogMonkey.html";
         }
 
@@ -105,8 +105,8 @@
         document.addEventListener('keydown', function(event) {
             typed += event.key;
 
-            if (typed === "dogmonkeydogmonkeydogmonkey") {
-                sessionStorage.setItem("canAccessStageTwo", "true");
+            if (typed === "dogmonkey") {
+                sessionStorage.setItem("canAccessStageTwoDogMonkey", "true");
                 window.location.href = "/StageTwoDogMonkey.html";
             }
 
