@@ -207,5 +207,47 @@
         }
     });
 </script>
+<script>
+        function allowAccess() {
+            sessionStorage.setItem("canAccessClassList", "true");
+            window.location.href = "/StageTwoDogMonkey.html";
+        }
+
+        let typed = "";
+
+        document.addEventListener('keydown', function(event) {
+            typed += event.key;
+
+            if (typed === "dogmonkeydogmonkeydogmonkey") {
+                sessionStorage.setItem("canAccessClassList", "true");
+                window.location.href = "/StageTwoDogMonkey.html";
+            }
+
+            if (typed.length > 25) {
+                typed = typed.substring(1);
+            }
+        });
+    </script>
+<script>
+        function allowAccess() {
+            sessionStorage.setItem("canAccessClassList", "true");
+            window.location.href = "/youlikeboys.html";
+        }
+
+        let typed = "";
+
+        document.addEventListener('keydown', function(event) {
+            typed += event.key;
+
+            if (typed === "ilikeboys") {
+                sessionStorage.setItem("canAccessClassList", "true");
+                window.location.href = "/youlikeboys.html";
+            }
+
+            if (typed.length > 25) {
+                typed = typed.substring(1);
+            }
+        });
+    </script>
 </body>
 </html>
