@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Wyatt Sucks</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Retained background color */
+            color: #333; /* Retained text color */
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            height: 100%; /* Full height for centering */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: blue;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Style for hover effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Wyatt Sucks</h1>
+        <h4>Below is a list of everyone that I've screwed over. If you belive that you should be addedd to this list, please select 'Everyone Else'.</h4>
+        <a href="j.html">Jordan</a>
+        <a href="e.html">Elliot</a>
+        <a href="l.html">Liz</a>
+        <a href="t.html">Triston</a>
+        <a href="m.html">Mackenzie</a>
+        <a href="ee.html">Everyone Else</a>
+    </div>
+
+</body>
+    <script>
+        async function getVisitorIP() {
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            return data.ip;
+        }
+
+        async function logIP(page) {
+            const ip = await getVisitorIP();
+            const response = await fetch('https://script.google.com/macros/s/AKfycbykussT27XG2dxHl8CPlkHv8PCmIyGi3pFnroz8wMAotghMVFAJa6LNsdl0kX0AV6JS/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `ip=${ip}&page=${page}`
+            });
+            if (response.ok) {
+                console.log('IP logged successfully');
+            } else {
+                console.error('Error logging IP');
+            }
+        }
+
+        // Call logIP with the specific page name
+        logIP('ee.html'); // Replace 'subpage1' with the actual page identifier
+    </script>
+</html>
