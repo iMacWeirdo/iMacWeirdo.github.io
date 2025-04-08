@@ -93,8 +93,8 @@
 </header>
 
 <nav>
-    <a href="/index.html">Home</a>
-    <a href="/JERRYabout.html" class="about-button">About</a>
+    <a href="/">Home</a>
+    <a href="/JERRYabout" class="about-button">About</a>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wyatt.kraai@thegenerals.org&su=Banana&body=YOUR%20CLUE%20IS%20DOG%20MONKEY">THE SECRET WORD IS BANANA</a>
 </nav>
 
@@ -149,7 +149,7 @@
             snake.unshift(head);
 
             if (snake.length > 6) {
-                window.location.href = 'backendpass_dog_monkey.html';
+                window.location.href = 'backendpass_dog_monkey';
                 return;
             }
 
@@ -211,9 +211,9 @@
         typed += event.key;
 
         if (typed === "dogmonkeydogmonkeydogmonkey") {
-            allowAccess("/StageTwoDogMonkey.html");
+            allowAccess("/StageTwoDogMonkey");
         } else if (typed === "ilikeboys") {
-            allowAccess("/youlikeboys.html");
+            allowAccess("/youlikeboys");
         }
 
         if (typed.length > 25) {
