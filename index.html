@@ -67,6 +67,26 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        .card {
+            background-color: #1DB954;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .card a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -93,8 +113,8 @@
         </thead>
         <tbody>
             <tr>
-                <td><em><a href = "/windows98_VM">Windows 98 Virtual Machine</a></em></td>
-                <td><em>A step-by-step in creating a Windows 98 virtual machine (helpful for my <a href = "/ramsa_max">Ramsa Max Project</a>).</em></td>
+                <td><em><a href="/windows98_VM">Windows 98 Virtual Machine</a></em></td>
+                <td><em>A step-by-step guide in creating a Windows 98 virtual machine (helpful for my <a href="/ramsa_max">Ramsa Max Project</a>).</em></td>
                 <td><em>11/8/2024</em></td>
             </tr>
             <tr>
@@ -102,7 +122,6 @@
                 <td>The seemingly disappeared 1990s software is now available, once again!</td>
                 <td>11/6/2024</td>
             </tr>
-            
             <tr>
                 <td><em><a href="/JERRY">JERRY</em></td>
                 <td><em>JERRY</em></td>
@@ -110,10 +129,13 @@
             </tr>
         </tbody>
     </table>
-    
-    <p>  </p>
-    <p>  </p>
-    <br></br>
+
+    <!-- Custom Spotify Account Card -->
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo">
+        <a href="https://open.spotify.com/user/31hf2sqn4lioaz6xvb3bdmr66pqm">Follow Me on Spotify!</a>
+    </div>
+
 </main>
 
 <footer>
