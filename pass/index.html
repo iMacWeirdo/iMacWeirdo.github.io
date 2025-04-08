@@ -84,9 +84,9 @@
 </header>
 
 <nav>
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/pass.html">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/pass">Contact</a>
 </nav>
 
 <main>
@@ -114,12 +114,12 @@
 
         // List of valid name and date pairs with corresponding redirect URLs
         const validEntries = [
-            { name: 'Jordan', date: '2007-02-04', redirect: 'nicetry.html' },
-            { name: 'Mackenzie', date: '2007-07-12', redirect: 'nicetry.html' },
-            { name: 'Wyatt', date: '2007-09-01', redirect: 'wyattsucks.html' },
-            { name: 'Liz', date: '2007-03-12', redirect: 'nicetry.html' },
-            { name: 'Triston', date: '2008-04-11', redirect: 'nicetry.html' },
-            { name: 'Jerry', date: '1988-08-26', redirect: 'JerryBackendPass.html' } // Added missing comma here
+            { name: 'Jordan', date: '2007-02-04', redirect: '/nicetry' },
+            { name: 'Mackenzie', date: '2007-07-12', redirect: '/nicetry' },
+            { name: 'Wyatt', date: '2007-09-01', redirect: '/wyattsucks' },
+            { name: 'Liz', date: '2007-03-12', redirect: '/nicetry' },
+            { name: 'Triston', date: '2008-04-11', redirect: '/nicetry' },
+            { name: 'Jerry', date: '1988-08-26', redirect: '/JerryBackendPass' } // Added missing comma here
         ];
 
         const entry = validEntries.find(entry => 
