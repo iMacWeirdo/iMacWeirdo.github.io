@@ -168,6 +168,88 @@
         <a href="https://www.youtube.com/@wyattsucks-org" target="_blank">View my YouTube Chanel!</a>
     </div>
     <br>
+        <!-- Circular Chat Button -->
+    <div class="chat-button" onclick="openChat()">
+        <img src="/Resources/ace.png" alt="Asexual Flag" />
+    </div>
+
+    <!-- Chat Box -->
+    <div id="chat-box" class="chat-box">
+        <div class="chat-header">
+            <span>Hello!</span>
+            <button onclick="closeChat()">X</button>
+        </div>
+        <div class="chat-content">
+            <p>Fun fact: this website is asexually owned!</p>
+        </div>
+    </div>
+
+    <style>
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border: 5px solid purple; /* Purple outline */
+            border-radius: 50%; /* Circular button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+        .chat-button img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            border-radius: 50%; /* Ensure image is circular */
+        }
+        .chat-box {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border-radius: 8px;
+        }
+        .chat-header {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-content {
+            padding: 10px;
+        }
+        #chat-box button {
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    
+    <script>
+        function openChat() {
+            document.getElementById("chat-box").style.display = "block";
+        }
+
+        function closeChat() {
+            document.getElementById("chat-box").style.display = "none";
+        }
+    </script>
 </main>
 
 <footer>
