@@ -206,6 +206,61 @@
         <a href="https://www.youtube.com/@wyattsucks-org" target="_blank">View my YouTube Chanel!</a>
     </div>
     <br>
+    <!-- Maintenance Countdown -->
+<div id="maintenance-countdown" style="text-align:center; margin-top:20px;">
+  <div id="countdown-box" style="
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: color 0.5s, background-color 0.5s;
+  ">
+    Loading countdown...
+  </div>
+</div>
+
+<script>
+  (function () {
+    const countdownBox = document.getElementById("countdown-box");
+    const targetDate = new Date("2025-06-06T05:00:00Z"); // June 6, 2025 12:00 AM CST
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = Math.floor((targetDate - now) / 1000); // in seconds
+
+      if (diff <= 0) {
+        countdownBox.textContent = "This website is currently under maintenance.";
+        countdownBox.style.color = "red";
+        countdownBox.style.backgroundColor = "#ffeeee";
+        countdownBox.style.fontWeight = "bold";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (60 * 60 * 24));
+      diff %= 60 * 60 * 24;
+      const hours = Math.floor(diff / (60 * 60));
+      diff %= 60 * 60;
+      const minutes = Math.floor(diff / 60);
+      const seconds = diff % 60;
+
+      countdownBox.textContent = 
+        `This website will be down for maintenance in ` +
+        `${String(days).padStart(2, '0')}d:` +
+        `${String(hours).padStart(2, '0')}h:` +
+        `${String(minutes).padStart(2, '0')}m:` +
+        `${String(seconds).padStart(2, '0')}s.`;
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  })();
+</script>
+
         <!-- Circular Chat Button -->
     <div class="chat-button" onclick="openChat()">
         <img src="/Resources/k.png" alt="Asexual Flag" />
